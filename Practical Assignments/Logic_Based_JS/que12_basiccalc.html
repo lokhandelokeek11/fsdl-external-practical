@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { font-family: Arial; padding:20px; }
+input, button { padding:10px; margin:5px; }
+</style>
+</head>
+<body>
+
+<h2>Calculator</h2>
+
+<input id="a" placeholder="Num1">
+<input id="b" placeholder="Num2"><br>
+
+<button onclick="calc('+')">+</button>
+<button onclick="calc('-')">-</button>
+<button onclick="calc('*')">*</button>
+<button onclick="calc('/')">/</button>
+
+<h3>Result: <span id="res"></span></h3>
+
+<script>
+function calc(op){
+  let a = a + document.getElementById("a").value;
+  let b = b + document.getElementById("b").value;
+
+  let r;
+  if(op=='+') r = a+b;
+  if(op=='-') r = a-b;
+  if(op=='*') r = a*b;
+  if(op=='/') r = a/b;
+
+  document.getElementById("res").innerText = r;
+}
+</script>
+
+</body>
+</html>

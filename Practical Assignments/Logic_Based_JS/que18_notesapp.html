@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { font-family: Arial; padding:20px; }
+li { margin:5px; }
+</style>
+</head>
+<body>
+
+<h2>Notes</h2>
+
+<input id="note" placeholder="Enter note">
+<button onclick="add()">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+function show(){
+  let ul = document.getElementById("list");
+  ul.innerHTML = "";
+  notes.forEach((n,i)=>{
+    ul.innerHTML += `<li>${n} <button onclick="del(${i})">X</button></li>`;
+  });
+}
+
+function add(){
+  let n = document.getElementById("note").value;
+  notes.push(n);
+  localStorage.setItem("notes", JSON.stringify(notes));
+  show();
+}
+
+function del(i){
+  notes.splice(i,1);
+  localStorage.setItem("notes", JSON.stringify(notes));
+  show();
+}
+
+show();
+</script>
+
+</body>
+</html>

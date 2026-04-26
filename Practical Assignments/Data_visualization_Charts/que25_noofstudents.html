@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body { font-family: Arial; padding:20px; text-align:center; }
+canvas { width:400px; }
+</style>
+</head>
+<body>
+
+<h2>Students in Departments</h2>
+<canvas id="barChart"></canvas>
+
+<script>
+new Chart(document.getElementById("barChart"), {
+  type: 'bar',
+  data: {
+    labels: ["CSE", "IT", "EXTC", "MECH"],
+    datasets: [{
+      label: "Students",
+      data: [50, 40, 30, 20],
+      backgroundColor: ["red","blue","green","orange"]
+    }]
+  }
+});
+</script>
+
+</body>
+</html>

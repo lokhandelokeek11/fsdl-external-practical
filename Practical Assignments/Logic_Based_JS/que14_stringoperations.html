@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { font-family: Arial; padding:20px; }
+input, button { margin:5px; padding:8px; }
+</style>
+</head>
+<body>
+
+<h2>String Operations</h2>
+
+<input id="text" placeholder="Enter text">
+<button onclick="process()">Process</button>
+
+<p id="out"></p>
+
+<script>
+function process(){
+  let t = document.getElementById("text").value;
+
+  let rev = t.split("").reverse().join("");
+  let up = t.toUpperCase();
+  let low = t.toLowerCase();
+
+  document.getElementById("out").innerHTML =
+    "Reverse: " + rev + "<br>" +
+    "Upper: " + up + "<br>" +
+    "Lower: " + low + "<br>" +
+    "Length: " + t.length;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { font-family: Arial; padding: 20px; }
+.box { border:1px solid #333; padding:10px; width:200px; }
+button { margin:5px; }
+</style>
+</head>
+<body>
+
+<h2>Shopping Cart</h2>
+
+<div class="box">
+  <h3>Product</h3>
+  <p>Price: ₹100</p>
+  <button onclick="change(-1)">-</button>
+  <span id="qty">1</span>
+  <button onclick="change(1)">+</button>
+  <h3>Total: ₹<span id="total">100</span></h3>
+</div>
+
+<script>
+let qty = 1, price = 100;
+
+function change(val){
+  qty += val;
+  if(qty < 1) qty = 1;
+  document.getElementById("qty").innerText = qty;
+  document.getElementById("total").innerText = qty * price;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+li { padding: 10px; border: 1px solid #333; margin: 5px; cursor: move; }
+</style>
+</head>
+<body>
+
+<ul id="list">
+  <li draggable="true">Item 1</li>
+  <li draggable="true">Item 2</li>
+  <li draggable="true">Item 3</li>
+</ul>
+
+<script>
+let dragged;
+
+document.querySelectorAll("li").forEach(item=>{
+  item.ondragstart = ()=> dragged = item;
+  item.ondragover = e => e.preventDefault();
+  item.ondrop = function(){
+    this.parentNode.insertBefore(dragged, this);
+  };
+});
+</script>
+
+</body>
+</html>

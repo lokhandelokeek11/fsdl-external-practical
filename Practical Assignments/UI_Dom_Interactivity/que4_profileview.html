@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { font-family: Arial; padding: 20px; }
+input { padding: 8px; margin: 10px 0; }
+.card { border: 1px solid #333; padding: 15px; width: 200px; }
+</style>
+</head>
+<body>
+
+<h2>Profile Preview</h2>
+
+<input type="text" id="name" placeholder="Enter name" oninput="update()">
+
+<div class="card">
+  <h3 id="preview">Your Name</h3>
+</div>
+
+<script>
+function update(){
+  document.getElementById("preview").innerText = document.getElementById("name").value;
+}
+</script>
+
+</body>
+</html>

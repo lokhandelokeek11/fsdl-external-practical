@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { text-align:center; font-family: Arial; }
+img { width:150px; margin:10px; }
+</style>
+</head>
+<body>
+
+<h2>Gallery</h2>
+
+<select onchange="filter(this.value)">
+<option value="all">All</option>
+<option value="nature">Nature</option>
+<option value="city">City</option>
+</select>
+
+<div id="gallery">
+<img src="https://via.placeholder.com/150" data-cat="nature">
+<img src="https://via.placeholder.com/150" data-cat="city">
+<img src="https://via.placeholder.com/150" data-cat="nature">
+</div>
+
+<script>
+function filter(cat){
+  let imgs = document.querySelectorAll("#gallery img");
+
+  imgs.forEach(img=>{
+    if(cat=="all" || img.dataset.cat==cat)
+      img.style.display = "inline";
+    else
+      img.style.display = "none";
+  });
+}
+</script>
+
+</body>
+</html>

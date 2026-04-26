@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body { text-align:center; font-family: Arial; }
+</style>
+</head>
+<body>
+
+<h2>Attendance</h2>
+<canvas id="pieChart"></canvas>
+
+<script>
+new Chart(document.getElementById("pieChart"), {
+  type: 'pie',
+  data: {
+    labels: ["Present", "Absent", "Leave"],
+    datasets: [{
+      data: [70, 20, 10],
+      backgroundColor: ["green","red","yellow"]
+    }]
+  }
+});
+</script>
+
+</body>
+</html>

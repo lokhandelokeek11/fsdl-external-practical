@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { 
+            text-align:center; font-family: Arial; padding:20px; 
+        }
+        button 
+        { 
+            padding:10px; margin:5px;
+            }
+</style>
+</head>
+<body>
+
+<h2>Stopwatch</h2>
+<h1 id="time">0</h1>
+
+<button onclick="start()">Start</button>
+<button onclick="stop()">Stop</button>
+<button onclick="reset()">Reset</button>
+
+<script>
+let t = 0, timer;
+
+function start(){
+  timer = setInterval(()=>{
+    t++;
+    document.getElementById("time").innerText = t;
+  },1000);
+}
+
+function stop(){
+  clearInterval(timer);
+}
+
+function reset(){
+  t = 0;
+  document.getElementById("time").innerText = t;
+}
+</script>
+
+</body>
+</html>

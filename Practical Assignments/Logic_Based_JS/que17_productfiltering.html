@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { font-family: Arial; padding:20px; }
+.card { border:1px solid #333; padding:10px; margin:5px; display:inline-block; }
+</style>
+</head>
+<body>
+
+<h2>Filter Products</h2>
+
+<select onchange="filter(this.value)">
+  <option value="all">All</option>
+  <option value="clothes">Clothes</option>
+  <option value="electronics">Electronics</option>
+</select>
+
+<div id="items"></div>
+
+<script>
+let data = [
+  {name:"Shirt", cat:"clothes"},
+  {name:"TV", cat:"electronics"}
+];
+
+function show(list){
+  let div = document.getElementById("items");
+  div.innerHTML = "";
+  list.forEach(p=>{
+    div.innerHTML += `<div class="card">${p.name}</div>`;
+  });
+}
+
+function filter(cat){
+  if(cat=="all") show(data);
+  else show(data.filter(p=>p.cat==cat));
+}
+
+show(data);
+</script>
+
+</body>
+</html>
